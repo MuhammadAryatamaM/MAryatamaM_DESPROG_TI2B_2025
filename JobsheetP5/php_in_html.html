@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cara 01</title>
+</head>
+
+<body>
+  <p>Tanggal Hari ini :
+    <?php echo date("d M Y")?>
+  </p>
+
+  <h3>Time</h3>
+  <?php date_default_timezone_set("asia/jakarta"); echo date("h:i:sa"); ?>
+
+  <h3>Date</h3>
+  <?php echo "Today is " . date("Y/m/d") . "<br />"; echo "Today is " .
+    date("Y.m.d") . "<br />"; echo "Today is " . date("Y-m-d") . "<br />"; echo
+    "Today is " . date("l"); ?>
+</body>
+
+</html>
