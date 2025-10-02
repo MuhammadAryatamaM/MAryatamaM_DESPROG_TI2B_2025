@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styleslide.css" />
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#flip").click(function () {
+          $("#kotak2").slideUp("slow");
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="flip">Klik untuk efek slide</div>
+    <div id="kotak2">Selamat Pagi</div>
+  </body>
+</html>

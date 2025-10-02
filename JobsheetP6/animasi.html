@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="styleanimasi.css" />
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("button").click(function () {
+        $("div").animate({left: 300});
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <button type="button">Start Animation</button>
+  <div class="box"></div>
+</body>
+
+</html>
