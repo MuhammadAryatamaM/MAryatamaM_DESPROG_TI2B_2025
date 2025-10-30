@@ -1,0 +1,383 @@
+:root {
+  --bg: #f7f7f8;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+
+  --primary: #2563eb; /* biru untuk pendapatan */
+  --danger: #dc2626; /* merah untuk pengeluaran */
+
+  --radius: 12px;
+  --space: 16px; /* base spacing unit */
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family:
+    system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+/* top bar */
+.topbar {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+}
+.app-title {
+  margin: 0;
+  padding: 12px 20px;
+  font-size: 14px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Container and sections */
+.container {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+.greeting h2 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* Cards */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+/* Bagian  KPI */
+.kpi-row {
+  display: flex;
+  gap: var(--space);
+  margin: 16px 0 10px;
+  flex-wrap: wrap;
+}
+.kpi {
+  flex: 1 1 240px;
+}
+.kpi .kpi-label {
+  color: var(--muted);
+  margin: 0 0 6px;
+  font-size: 14px;
+}
+.kpi .kpi-value {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+.kpi-income .kpi-value {
+  color: var(--primary);
+}
+.kpi-expense .kpi-value {
+  color: var(--danger);
+}
+
+/* Bagian History dan Statistik */
+.actions-row {
+  display: flex;
+  gap: var(--space);
+  margin: 10px 0 22px;
+  flex-wrap: wrap;
+}
+.action {
+  flex: 1 1 240px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: transform .06s ease, box-shadow .06s ease;
+}
+.action:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+.action-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef2ff;
+  color: #374151;
+  font-weight: 700;
+}
+.action-icon-blue {
+  background: #e1ecff;
+  color: var(--primary);
+}
+.action-icon-red {
+  background: #ffe6e6;
+  color: var(--danger);
+}
+.action-text strong {
+  display: block;
+  font-size: 14px;
+}
+.action-text span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* 2 kolom */
+.cols {
+  display: flex;
+  gap: var(--space);
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.col {
+  flex: 1 1 460px;
+}
+.card-header {
+  margin-bottom: 8px;
+}
+.card-header h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Statistik pengeluaran */
+.stats-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 8px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+.stat-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+.dot.orange {
+  background: #f59e0b;
+}
+.dot.slate {
+  background: #64748b;
+}
+.dot.lime {
+  background: #84cc16;
+}
+.dot.red {
+  background: #ef4444;
+}
+.dot.blue {
+  background: #3b82f6;
+}
+.stat-label {
+  font-weight: 600;
+}
+.stat-right {
+  text-align: right;
+  color: var(--muted);
+  font-size: 13px;
+}
+.stat-right .amount {
+  display: block;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 14px;
+}
+.stat-right .pct {
+  font-variant-numeric: tabular-nums;
+}
+
+/* tabel */
+.table-wrap {
+  overflow: auto;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th,
+.table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+.table th {
+  text-align: left;
+  color: var(--muted);
+  font-weight: 600;
+}
+.table td:last-child,
+.table th:last-child {
+  width: 24px;
+}
+.text-right {
+  text-align: right;
+}
+.amount-pos {
+  color: var(--primary);
+  font-weight: 600;
+}
+.amount-neg {
+  color: var(--danger);
+  font-weight: 600;
+}
+.amount-neutral {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* form dialog dari jquery-ui */
+.form-dialog .ui-dialog-titlebar {
+  display: none;
+} /* style formnya */
+.ui-dialog {
+  border-radius: 14px !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow) !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+.ui-widget.ui-widget-content {
+  padding: 0;
+}
+.form {
+  padding: 18px 18px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.field label {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.req {
+  color: var(--danger);
+  font-weight: 700;
+}
+.field input[type="text"],
+.field input[type="date"],
+.field input[type="number"],
+.field select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  font-size: 14px;
+}
+.input-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.amount-income {
+  color: var(--primary);
+  font-weight: 600;
+}
+.amount-expense {
+  color: var(--danger);
+  font-weight: 600;
+}
+.amount-neutral {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* menu 3 titik */
+.menu-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  color: #6b7280;
+  padding: 4px 6px;
+  border-radius: 6px;
+}
+.menu-btn:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* layout 'detail' */
+#detail-content dl {
+  margin: 0;
+}
+#detail-content dt {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 6px;
+}
+#detail-content dd {
+  margin: 2px 0 6px 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn-primary {
+  display: block;
+  width: 100%;
+  background: #232323;
+  color: #fff;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  opacity: 0.92;
+}
+
+.error {
+  color: var(--danger);
+  min-height: 16px;
+  font-size: 13px;
+  margin: 0 0 4px;
+}
+
+/* Responsivitas */
+@media (max-width: 720px) {
+  .kpi .kpi-value {
+    font-size: 24px;
+  }
+}
