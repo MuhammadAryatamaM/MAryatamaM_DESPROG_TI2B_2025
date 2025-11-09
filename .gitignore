@@ -1,5 +1,5 @@
-employee-management/
-node_modules/
-package.json
-package-lock.json
+/employee-management/
+/node_modules/
+/package.json
+/package-lock.json
 
